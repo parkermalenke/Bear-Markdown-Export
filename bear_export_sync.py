@@ -309,7 +309,7 @@ def process_image_links(md_text, filepath):
     def transform_link(match):
         path = match.group(1)
         safe_path = urllib.parse.quote(path)
-        return '![](' + parent + 'BearImages/' + safe_path + ')'
+        return '![](../' + parent + 'BearImages/' + safe_path + ')'
     md_text = re.sub(r'\[image:(.+?)\]', transform_link, md_text)
     return md_text
 
